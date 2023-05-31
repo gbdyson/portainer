@@ -1,0 +1,16 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command:
+      - tunnel
+      - --no-autoupdate
+      - run
+      - --token
+      - eyJhIjoiZjk1NmYwOGRmYmY2YmRiMGZmZjEyODRmMWIyYTdkNTAiLCJ0IjoiYWM4ZDFjOTktMjY2ZS00ZGI0LTk1MWQtMmFkZDMwOTI3NzE1IiwicyI6IlpETmlNelUzT1RndFl6RTNZaTAwWTJSaExXSTFPRGN0TmpZNU0yVmxZMk14TURVMCJ9
+    restart: always
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    external: true
